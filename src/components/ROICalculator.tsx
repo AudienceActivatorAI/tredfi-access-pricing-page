@@ -29,12 +29,12 @@ const ROICalculator = () => {
     const unsoldLeads = unsoldLeadsMonth * 12;
     setUnsoldLeadsPerYear(Math.max(0, unsoldLeads));
 
-    // Missed Car Deals Per Month = Unsold Leads Per Month × 0.07 (7% recovery rate)
-    const missedDealsMonth = unsoldLeadsMonth * 0.07;
+    // Missed Car Deals Per Month = Unsold Leads Per Month × 0.04 (4% recovery rate - conservative estimate)
+    const missedDealsMonth = unsoldLeadsMonth * 0.04;
     setMissedDealsPerMonth(Math.max(0, Math.round(missedDealsMonth)));
 
-    // Missed Car Deals Per Year = Unsold Leads Per Year × 0.07 (7% recovery rate)
-    const missedDeals = unsoldLeads * 0.07;
+    // Missed Car Deals Per Year = Unsold Leads Per Year × 0.04 (4% recovery rate)
+    const missedDeals = unsoldLeads * 0.04;
     setMissedDealsPerYear(Math.max(0, Math.round(missedDeals)));
 
     // Missed Sales Revenue Per Month = Missed Car Deals Per Month × Average Gross Per Deal
@@ -207,7 +207,7 @@ const ROICalculator = () => {
                 {formatNumber(missedDealsPerMonth)}
               </div>
               <div className="text-slate-600 font-medium">
-                Potential deals lost with 7% recovery
+                Potential deals lost (3-5% recovery estimate)
               </div>
             </div>
 
