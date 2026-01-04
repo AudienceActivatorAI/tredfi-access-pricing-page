@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, X, Shield, Zap, Rocket, ArrowRight, BarChart3, Users, MessageSquare } from 'lucide-react';
+import ROICalculator from './ROICalculator';
 
 const PricingPage = () => {
   return (
@@ -32,6 +33,9 @@ const PricingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* ROI Calculator */}
+      <ROICalculator />
 
       {/* Pricing Grid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
