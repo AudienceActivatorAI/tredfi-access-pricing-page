@@ -8,8 +8,11 @@ const ROICalculator = () => {
 
   // Calculated values
   const [conversionRate, setConversionRate] = useState(0);
+  const [unsoldLeadsPerMonth, setUnsoldLeadsPerMonth] = useState(0);
   const [unsoldLeadsPerYear, setUnsoldLeadsPerYear] = useState(0);
+  const [missedDealsPerMonth, setMissedDealsPerMonth] = useState(0);
   const [missedDealsPerYear, setMissedDealsPerYear] = useState(0);
+  const [missedRevenuePerMonth, setMissedRevenuePerMonth] = useState(0);
   const [missedRevenuePerYear, setMissedRevenuePerYear] = useState(0);
 
   // Recalculate whenever inputs change
@@ -18,13 +21,25 @@ const ROICalculator = () => {
     const conversion = leadsPerMonth > 0 ? (dealsPerMonth / leadsPerMonth) * 100 : 0;
     setConversionRate(conversion);
 
+    // Unsold Leads Per Month = Leads - Car Deals
+    const unsoldLeadsMonth = leadsPerMonth - dealsPerMonth;
+    setUnsoldLeadsPerMonth(Math.max(0, unsoldLeadsMonth));
+
     // Unsold Leads Per Year = (Leads - Car Deals) × 12
-    const unsoldLeads = (leadsPerMonth - dealsPerMonth) * 12;
+    const unsoldLeads = unsoldLeadsMonth * 12;
     setUnsoldLeadsPerYear(Math.max(0, unsoldLeads));
+
+    // Missed Car Deals Per Month = Unsold Leads Per Month × 0.07 (7% recovery rate)
+    const missedDealsMonth = unsoldLeadsMonth * 0.07;
+    setMissedDealsPerMonth(Math.max(0, Math.round(missedDealsMonth)));
 
     // Missed Car Deals Per Year = Unsold Leads Per Year × 0.07 (7% recovery rate)
     const missedDeals = unsoldLeads * 0.07;
     setMissedDealsPerYear(Math.max(0, Math.round(missedDeals)));
+
+    // Missed Sales Revenue Per Month = Missed Car Deals Per Month × Average Gross Per Deal
+    const missedRevenueMonth = missedDealsMonth * avgGrossPerDeal;
+    setMissedRevenuePerMonth(Math.max(0, missedRevenueMonth));
 
     // Missed Sales Revenue Per Year = Missed Car Deals Per Year × Average Gross Per Deal
     const missedRevenue = missedDeals * avgGrossPerDeal;
@@ -136,7 +151,7 @@ const ROICalculator = () => {
         </div>
 
         {/* Calculated Metrics */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {/* Conversion Rate */}
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
             <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
@@ -149,6 +164,22 @@ const ROICalculator = () => {
               <div 
                 className="h-full bg-blue-600 rounded-full transition-all duration-300"
                 style={{ width: `${Math.min(conversionRate, 100)}%` }}
+              />
+            </div>
+          </div>
+
+          {/* Unsold Leads Per Month */}
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
+            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
+              {formatNumber(unsoldLeadsPerMonth)}
+            </div>
+            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
+              Unsold Leads Per Month
+            </div>
+            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-blue-600 rounded-full transition-all duration-300"
+                style={{ width: '75%' }}
               />
             </div>
           </div>
@@ -169,6 +200,22 @@ const ROICalculator = () => {
             </div>
           </div>
 
+          {/* Missed Car Deals Per Month */}
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
+            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
+              {formatNumber(missedDealsPerMonth)}
+            </div>
+            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
+              Missed Sales Per Month
+            </div>
+            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-blue-600 rounded-full transition-all duration-300"
+                style={{ width: '50%' }}
+              />
+            </div>
+          </div>
+
           {/* Missed Car Deals Per Year */}
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
             <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
@@ -181,6 +228,22 @@ const ROICalculator = () => {
               <div 
                 className="h-full bg-blue-600 rounded-full transition-all duration-300"
                 style={{ width: '50%' }}
+              />
+            </div>
+          </div>
+
+          {/* Missed Gross Profit Per Month */}
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
+            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
+              {formatCurrency(missedRevenuePerMonth)}
+            </div>
+            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
+              Missed Gross Profit Per Month
+            </div>
+            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-blue-600 rounded-full transition-all duration-300"
+                style={{ width: '90%' }}
               />
             </div>
           </div>
