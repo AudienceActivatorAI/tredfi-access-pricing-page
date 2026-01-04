@@ -77,7 +77,7 @@ const ROICalculator = () => {
         </div>
 
         {/* Input Sliders */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Leads Per Month Slider */}
             <div>
@@ -150,128 +150,127 @@ const ROICalculator = () => {
           </div>
         </div>
 
-        {/* Calculated Metrics */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {/* Conversion Rate */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              {conversionRate.toFixed(0)}%
+        {/* Current Performance */}
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-slate-900 mb-4">Your Current Performance</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
+                Conversion Rate
+              </div>
+              <div className="text-5xl font-bold text-slate-900 mb-3">
+                {conversionRate.toFixed(0)}%
+              </div>
+              <div className="h-3 bg-slate-200 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-blue-600 rounded-full transition-all duration-300"
+                  style={{ width: `${Math.min(conversionRate, 100)}%` }}
+                />
+              </div>
             </div>
-            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
-              Conversion Rate
-            </div>
-            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: `${Math.min(conversionRate, 100)}%` }}
-              />
+
+            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
+                Unsold Leads Last Month
+              </div>
+              <div className="text-5xl font-bold text-slate-900 mb-3">
+                {formatNumber(unsoldLeadsPerMonth)}
+              </div>
+              <div className="text-sm text-slate-500">
+                These leads walked away without a deal
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Unsold Leads Per Month */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              {formatNumber(unsoldLeadsPerMonth)}
+        {/* What You Lost Last Month - HERO SECTION */}
+        <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl border-2 border-red-200 p-8 mb-8">
+          <div className="text-center mb-8">
+            <div className="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide mb-4">
+              💰 Money Left on the Table
             </div>
-            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
-              Unsold Leads Per Month
-            </div>
-            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: '75%' }}
-              />
-            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+              What You Lost Last Month
+            </h3>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Based on your numbers, here's the revenue that walked out your door
+            </p>
           </div>
 
-          {/* Unsold Leads Per Year */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              {formatNumber(unsoldLeadsPerYear)}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Missed Deals */}
+            <div className="bg-white rounded-xl shadow-lg border border-red-200 p-8 text-center transform hover:scale-105 transition-transform">
+              <div className="text-sm font-bold text-red-600 uppercase tracking-wide mb-3">
+                Missed Sales Last Month
+              </div>
+              <div className="text-6xl md:text-7xl font-extrabold text-slate-900 mb-2">
+                {formatNumber(missedDealsPerMonth)}
+              </div>
+              <div className="text-slate-600 font-medium">
+                Potential deals lost with 7% recovery
+              </div>
             </div>
-            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
-              Unsold Leads Per Year
-            </div>
-            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: '75%' }}
-              />
+
+            {/* Missed Revenue */}
+            <div className="bg-white rounded-xl shadow-lg border border-red-200 p-8 text-center transform hover:scale-105 transition-transform">
+              <div className="text-sm font-bold text-red-600 uppercase tracking-wide mb-3">
+                Lost Gross Profit Last Month
+              </div>
+              <div className="text-5xl md:text-6xl font-extrabold text-red-600 mb-2">
+                {formatCurrency(missedRevenuePerMonth)}
+              </div>
+              <div className="text-slate-600 font-medium">
+                Revenue that could have been yours
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Missed Car Deals Per Month */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              {formatNumber(missedDealsPerMonth)}
+        {/* Annual Impact */}
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+          <h3 className="text-xl font-bold text-slate-900 mb-6 text-center">
+            Annual Impact at This Rate
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center p-6 bg-slate-50 rounded-xl">
+              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
+                Unsold Leads Per Year
+              </div>
+              <div className="text-4xl font-bold text-slate-900">
+                {formatNumber(unsoldLeadsPerYear)}
+              </div>
             </div>
-            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
-              Missed Sales Per Month
-            </div>
-            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: '50%' }}
-              />
-            </div>
-          </div>
 
-          {/* Missed Car Deals Per Year */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              {formatNumber(missedDealsPerYear)}
+            <div className="text-center p-6 bg-slate-50 rounded-xl">
+              <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-2">
+                Missed Deals Per Year
+              </div>
+              <div className="text-4xl font-bold text-slate-900">
+                {formatNumber(missedDealsPerYear)}
+              </div>
             </div>
-            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
-              Missed Car Deals Per Year
-            </div>
-            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: '50%' }}
-              />
-            </div>
-          </div>
 
-          {/* Missed Gross Profit Per Month */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              {formatCurrency(missedRevenuePerMonth)}
-            </div>
-            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
-              Missed Gross Profit Per Month
-            </div>
-            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: '90%' }}
-              />
-            </div>
-          </div>
-
-          {/* Missed Sales Revenue Per Year */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 text-center">
-            <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              {formatCurrency(missedRevenuePerYear)}
-            </div>
-            <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
-              Missed Sales Revenue Per Year
-            </div>
-            <div className="mt-4 h-2 bg-slate-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-blue-600 rounded-full transition-all duration-300"
-                style={{ width: '90%' }}
-              />
+            <div className="text-center p-6 bg-blue-50 rounded-xl border-2 border-blue-200">
+              <div className="text-sm font-semibold text-blue-700 uppercase tracking-wide mb-2">
+                Lost Revenue Per Year
+              </div>
+              <div className="text-4xl font-bold text-blue-600">
+                {formatCurrency(missedRevenuePerYear)}
+              </div>
             </div>
           </div>
         </div>
 
         {/* CTA Message */}
-        <div className="mt-12 text-center">
-          <p className="text-lg text-slate-700 font-semibold mb-2">
-            TredFi Access helps you recover these lost opportunities with 150+ lenders and exclusive leads.
+        <div className="mt-12 text-center bg-blue-600 rounded-2xl p-8 text-white">
+          <h3 className="text-2xl font-bold mb-3">
+            Stop Leaving Money on the Table
+          </h3>
+          <p className="text-lg text-blue-100 mb-2 max-w-3xl mx-auto">
+            TredFi Access helps you recover these lost opportunities with 150+ lenders, exclusive leads, and dedicated support.
           </p>
-          <p className="text-slate-600">
-            See pricing options below to start converting more leads into deals.
+          <p className="text-blue-200">
+            See pricing options below to start converting more leads into deals today.
           </p>
         </div>
       </div>
