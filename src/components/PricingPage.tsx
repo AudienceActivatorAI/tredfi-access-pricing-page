@@ -48,7 +48,7 @@ const PricingPage = () => {
                 <Shield className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold mb-2">Lifetime License</h3>
-              <p className="text-slate-500 text-sm mb-6">Perfect for dealerships starting their special finance journey.</p>
+              <p className="text-slate-500 text-sm mb-6">Lead Enrichment and Activation to recover lost revenue monthly.</p>
               <div className="flex items-baseline gap-1">
                 <span className="text-4xl font-extrabold">$995</span>
                 <span className="text-slate-500 font-medium text-sm">One-Time Fee</span>
@@ -56,12 +56,14 @@ const PricingPage = () => {
             </div>
             <div className="p-8 flex-grow">
               <ul className="space-y-4">
-                <PricingFeature text="Custom Special Finance Website" />
-                <PricingFeature text="150+ Lenders (Short-term Access)" />
-                <PricingFeature text="Managed CRM & DMS Activation (30 Days)" />
-                <PricingFeature text="Audience Activator (30 Days Free - $995 Value)" />
-                <PricingFeature text="Social Media Setup (SF Website)" />
-                <PricingFeature text="Email & Text Message Templates" />
+                <PricingFeature text="Custom Special Finance Platform (Website and Dashboard)" />
+                <PricingFeature text="150 Short-Term Lenders" />
+                <PricingFeature text="Lead Enrichment and Activation" />
+                <PricingFeature text="Audience Activator Super Pixel (30 Days Free)" />
+                <PricingFeature text="Social Media Setup (SF Brand Only)" />
+                <PricingFeature text="Local SEO" />
+                <PricingFeature text="Outreach Playbook (Phone, Email, and SMS)" />
+                <PricingFeature text="First Year Hosting Included" />
                 <PricingFeature text="Training and Support" />
               </ul>
             </div>
@@ -95,7 +97,7 @@ const PricingPage = () => {
                 <PricingFeature text="We Finance USA - Exclusive Leads" />
                 <PricingFeature text="Email & Text Marketing" />
                 <PricingFeature text="Social Media Management" />
-                <PricingFeature text="Audience Activator (Discounted to $799/mo)" />
+                <PricingFeature text="Audience Activator $995 (Optional)" />
               </ul>
             </div>
             <div className="p-8 pt-0">
@@ -157,10 +159,11 @@ const PricingPage = () => {
                 <ComparisonRow label="Platform License" tier1="One-Time" tier2="One-Time" tier3="One-Time" />
                 <ComparisonRow label="One-Time Fee" tier1="$995" tier2="$1,495" tier3="$2,000" />
                 <ComparisonRow label="Per Deal Fee" tier1="None" tier2="$150" tier3="None" />
-                <ComparisonRow label="Lender Access (150+)" tier1={true} tier2={true} tier3={true} />
-                <ComparisonRow label="Custom SF Website" tier1={true} tier2={true} tier3={true} />
+                <ComparisonRow label="Short-Term Lenders (150)" tier1={true} tier2={true} tier3={true} />
+                <ComparisonRow label="SF Platform & Dashboard" tier1={true} tier2={true} tier3={true} />
+                <ComparisonRow label="Lead Enrichment" tier1={true} tier2={true} tier3={true} />
                 <ComparisonRow label="Lead Generation" tier1="Standard" tier2="Exclusive" tier3="Exclusive" />
-                <ComparisonRow label="Audience Activator" tier1="30 Days" tier2="$799/mo" tier3="Included" />
+                <ComparisonRow label="Audience Activator" tier1="30 Days" tier2="$995 Optional" tier3="Included" />
                 <ComparisonRow label="Territory Exclusivity" tier1={false} tier2={false} tier3={true} />
               </tbody>
             </table>
