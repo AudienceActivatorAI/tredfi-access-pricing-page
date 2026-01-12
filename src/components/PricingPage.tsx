@@ -59,9 +59,7 @@ const PricingPage = () => {
                 <PricingFeature text="Custom Special Finance Platform (Website and Dashboard)" />
                 <PricingFeature text="150 Short-Term Lenders" />
                 <PricingFeature text="Lead Enrichment and Activation" />
-                <PricingFeature text="Audience Activator Super Pixel (30 Days Free)" />
-                <PricingFeature text="Social Media Setup (SF Brand Only)" />
-                <PricingFeature text="Local SEO" />
+                <PricingFeature text="Audience Activator Super Pixel (Up to 500 leads a month for 90 days)" />
                 <PricingFeature text="Outreach Playbook (Phone, Email, and SMS)" />
                 <PricingFeature text="First Year Hosting Included" />
                 <PricingFeature text="Training and Support" />
@@ -163,7 +161,7 @@ const PricingPage = () => {
                 <ComparisonRow label="SF Platform & Dashboard" tier1={true} tier2={true} tier3={true} />
                 <ComparisonRow label="Lead Enrichment" tier1={true} tier2={true} tier3={true} />
                 <ComparisonRow label="Lead Generation" tier1="Standard" tier2="Exclusive" tier3="Exclusive" />
-                <ComparisonRow label="Audience Activator" tier1="30 Days" tier2="$995 Optional" tier3="Included" />
+                <ComparisonRow label="Audience Activator" tier1="Up to 500/mo (90 days)" tier2="$995 Optional" tier3="Included" />
                 <ComparisonRow label="Territory Exclusivity" tier1={false} tier2={false} tier3={true} />
               </tbody>
             </table>
