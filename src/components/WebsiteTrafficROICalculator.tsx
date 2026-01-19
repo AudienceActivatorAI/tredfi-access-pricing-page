@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const ROICalculator = () => {
+const WebsiteTrafficROICalculator = () => {
   // State for user inputs
   const [websiteTraffic, setWebsiteTraffic] = useState(10000);
   const [leadsPerMonth, setLeadsPerMonth] = useState(500);
@@ -586,5 +586,4 @@ const ROICalculator = () => {
   );
 };
 
-export default ROICalculator;
-
+export default WebsiteTrafficROICalculator;
