@@ -132,8 +132,12 @@ const PricingPage = () => {
               </div>
               <h3 className="text-2xl font-bold mb-2">Managed Services</h3>
               <p className="text-slate-400 text-sm mb-6">Private Territory Rights.</p>
-              <div className="flex items-baseline gap-1">
+              <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-slate-400 font-medium text-sm">Must Purchase Boost</span>
+              </div>
+              <div className="flex items-baseline gap-1">
+                <span className="text-4xl font-extrabold">$499</span>
+                <span className="text-slate-400 font-medium text-sm">/month</span>
               </div>
               <p className="text-[10px] text-slate-500 mt-2">*Requires $2,500/mo min. Ad budget</p>
             </div>
@@ -141,7 +145,6 @@ const PricingPage = () => {
               <ul className="space-y-4">
                 <PricingFeature text="Everything in Boost" dark />
                 <PricingFeature text="Exclusive Territory" dark />
-                <PricingFeature text="No Per Deal Fee" dark />
                 <PricingFeature text="Complete Audience Activator Platform Included" dark />
                 <PricingFeature text="Dedicated Account Management" dark />
                 <PricingFeature text="Full-Service Marketing & Lead Generation" dark />
@@ -174,7 +177,8 @@ const PricingPage = () => {
               <tbody className="divide-y divide-slate-100">
                 <ComparisonRow label="Platform License" tier1="One-Time" tier2="One-Time" tier3="Must Purchase Boost" />
                 <ComparisonRow label="One-Time Fee" tier1="$995" tier2="$1,995" tier3="Included" />
-                <ComparisonRow label="Per Deal Fee" tier1="$150 (Optional)" tier2="$150 (Optional)" tier3="None" />
+                <ComparisonRow label="Monthly Fee" tier1={false} tier2={false} tier3="$499/mo" />
+                <ComparisonRow label="Per Deal Fee" tier1="$150 (Optional)" tier2="$150 (Optional)" tier3="$150 (Optional)" />
                 <ComparisonRow label="Website Lead Recovery" tier1="Up to 60%" tier2="Up to 60%" tier3="Up to 60%" />
                 <ComparisonRow label="Short-Term Lenders (150)" tier1={true} tier2={true} tier3={true} />
                 <ComparisonRow label="SF Platform & Dashboard" tier1="Optional" tier2={true} tier3={true} />
