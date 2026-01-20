@@ -48,7 +48,7 @@ const PricingPage = () => {
                 <Shield className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold mb-2">Lifetime License</h3>
-              <p className="text-slate-500 text-sm mb-6">Lead Enrichment and Activation to recover lost revenue monthly.</p>
+              <p className="text-slate-500 text-sm mb-6">AI Super Pixel-powered Audience Activator.</p>
               <div className="flex items-baseline gap-1">
                 <span className="text-4xl font-extrabold">$995</span>
                 <span className="text-slate-500 font-medium text-sm">One-Time Fee</span>
@@ -56,14 +56,25 @@ const PricingPage = () => {
             </div>
             <div className="p-8 flex-grow">
               <ul className="space-y-4">
-                <PricingFeature text="Custom Special Finance Platform (Website and Dashboard)" />
-                <PricingFeature text="150 Short-Term Lenders" />
-                <PricingFeature text="Lead Enrichment and Activation" />
-                <PricingFeature text="Audience Activator Super Pixel (Up to 500 leads a month for 90 days)" />
+                <PricingFeature text="Up to 60% lead recovery from website traffic" />
+                <PricingFeature text="500+ leads a month (must have 3k website visitors)" />
+                <PricingFeature text="Old Lead Enrichment and Activation" />
+                <PricingFeature text="Custom Special Finance Platform (Optional)" />
+                <PricingFeature text="Short-term loan Access (150 Lenders)" />
                 <PricingFeature text="Outreach Playbook (Phone, Email, and SMS)" />
                 <PricingFeature text="First Year Hosting Included" />
                 <PricingFeature text="Training and Support" />
               </ul>
+              <div className="mt-8 pt-6 border-t border-slate-100">
+                <p className="text-xs font-bold text-slate-700 mb-3">+ Audience Activator Per Deal Access ($150/deal):</p>
+                <ul className="space-y-2">
+                  <PricingFeature text="High intent Shoppers in your area" />
+                  <PricingFeature text="Vehicle Match customer" />
+                  <PricingFeature text="Auto Loan Full credit applications" />
+                  <PricingFeature text="Pre-Approved - Down payment loan customers" />
+                  <PricingFeature text="Pre-Approved - Negative Equity Customers" />
+                </ul>
+              </div>
             </div>
             <div className="p-8 pt-0">
               <div className="w-full py-4 bg-slate-100 text-slate-500 font-bold rounded-xl text-center cursor-default">
@@ -84,19 +95,27 @@ const PricingPage = () => {
               <h3 className="text-2xl font-bold mb-2">Boost</h3>
               <p className="text-slate-500 text-sm mb-6">Unpublished Partner Rate.</p>
               <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-extrabold">$1,495</span>
+                <span className="text-4xl font-extrabold">$1,995</span>
                 <span className="text-slate-500 font-medium text-sm">One-Time Fee</span>
               </div>
-              <p className="text-xs text-blue-600 mt-2 font-semibold">+ $150 Per Deal Fee</p>
             </div>
             <div className="p-8 flex-grow">
               <ul className="space-y-4">
                 <PricingFeature text="Everything in Lifetime License" bold />
-                <PricingFeature text="We Finance USA - Exclusive Leads" />
-                <PricingFeature text="Email & Text Marketing" />
-                <PricingFeature text="Social Media Management" />
-                <PricingFeature text="Audience Activator $995 (Optional)" />
+                <PricingFeature text="Complete Audience Activator Platform" />
+                <PricingFeature text="Managed Email & Text Marketing" />
+                <PricingFeature text="Exclusive Territory" />
               </ul>
+              <div className="mt-8 pt-6 border-t border-slate-100">
+                <p className="text-xs font-bold text-slate-700 mb-3">+ Audience Activator Per Deal Access ($150/deal):</p>
+                <ul className="space-y-2">
+                  <PricingFeature text="High intent Shoppers in your area" />
+                  <PricingFeature text="Vehicle Match customer" />
+                  <PricingFeature text="Auto Loan Full credit applications" />
+                  <PricingFeature text="Pre-Approved - Down payment loan customers" />
+                  <PricingFeature text="Pre-Approved - Negative Equity Customers" />
+                </ul>
+              </div>
             </div>
             <div className="p-8 pt-0">
               <div className="w-full py-4 bg-blue-600 text-white font-bold rounded-xl text-center cursor-default opacity-90">
@@ -114,19 +133,18 @@ const PricingPage = () => {
               <h3 className="text-2xl font-bold mb-2">Managed Services</h3>
               <p className="text-slate-400 text-sm mb-6">Private Territory Rights.</p>
               <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-extrabold">$2,000</span>
-                <span className="text-slate-400 font-medium text-sm">One-Time Fee</span>
+                <span className="text-slate-400 font-medium text-sm">Must Purchase Boost</span>
               </div>
-              <p className="text-xs text-blue-400 mt-2 font-semibold">+ Exclusive Territory Rights</p>
-              <p className="text-[10px] text-slate-500 mt-1">*Requires $2,500/mo min. marketing budget</p>
+              <p className="text-[10px] text-slate-500 mt-2">*Requires $2,500/mo min. Ad budget</p>
             </div>
             <div className="p-8 flex-grow">
               <ul className="space-y-4">
                 <PricingFeature text="Everything in Boost" dark />
                 <PricingFeature text="Exclusive Territory" dark />
                 <PricingFeature text="No Per Deal Fee" dark />
-                <PricingFeature text="Audience Activator Included" dark />
+                <PricingFeature text="Complete Audience Activator Platform Included" dark />
                 <PricingFeature text="Dedicated Account Management" dark />
+                <PricingFeature text="Full-Service Marketing & Lead Generation" dark />
               </ul>
             </div>
             <div className="p-8 pt-0">
@@ -154,15 +172,17 @@ const PricingPage = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                <ComparisonRow label="Platform License" tier1="One-Time" tier2="One-Time" tier3="One-Time" />
-                <ComparisonRow label="One-Time Fee" tier1="$995" tier2="$1,495" tier3="$2,000" />
-                <ComparisonRow label="Per Deal Fee" tier1="None" tier2="$150" tier3="None" />
+                <ComparisonRow label="Platform License" tier1="One-Time" tier2="One-Time" tier3="Must Purchase Boost" />
+                <ComparisonRow label="One-Time Fee" tier1="$995" tier2="$1,995" tier3="Included" />
+                <ComparisonRow label="Per Deal Fee" tier1="$150 (Optional)" tier2="$150 (Optional)" tier3="None" />
+                <ComparisonRow label="Website Lead Recovery" tier1="Up to 60%" tier2="Up to 60%" tier3="Up to 60%" />
                 <ComparisonRow label="Short-Term Lenders (150)" tier1={true} tier2={true} tier3={true} />
-                <ComparisonRow label="SF Platform & Dashboard" tier1={true} tier2={true} tier3={true} />
-                <ComparisonRow label="Lead Enrichment" tier1={true} tier2={true} tier3={true} />
-                <ComparisonRow label="Lead Generation" tier1="Standard" tier2="Exclusive" tier3="Exclusive" />
-                <ComparisonRow label="Audience Activator" tier1="Up to 500/mo (90 days)" tier2="$995 Optional" tier3="Included" />
-                <ComparisonRow label="Territory Exclusivity" tier1={false} tier2={false} tier3={true} />
+                <ComparisonRow label="SF Platform & Dashboard" tier1="Optional" tier2={true} tier3={true} />
+                <ComparisonRow label="Lead Enrichment & Activation" tier1={true} tier2={true} tier3={true} />
+                <ComparisonRow label="Audience Activator Platform" tier1="500+ leads/mo" tier2="Complete" tier3="Complete" />
+                <ComparisonRow label="Managed Marketing" tier1={false} tier2={true} tier3={true} />
+                <ComparisonRow label="Territory Exclusivity" tier1={false} tier2={true} tier3={true} />
+                <ComparisonRow label="Min. Ad Budget Required" tier1={false} tier2={false} tier3="$2,500/mo" />
               </tbody>
             </table>
           </div>
