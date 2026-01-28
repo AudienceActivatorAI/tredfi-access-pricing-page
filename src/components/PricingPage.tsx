@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X, Shield, Zap, Rocket, ArrowRight, BarChart3, Users, MessageSquare } from 'lucide-react';
+import { Check, X, Shield, Zap, Rocket, ArrowRight, BarChart3, Users, MessageSquare, Phone, MessageCircle, FileText, Sparkles } from 'lucide-react';
 import ROICalculator from './ROICalculator';
 
 const PricingPage = () => {
@@ -153,6 +153,205 @@ const PricingPage = () => {
             <div className="p-8 pt-0">
               <div className="w-full py-4 bg-blue-500 text-white font-bold rounded-xl text-center cursor-default">
                 Call for Territory Check
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Dealer BDC AI Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-block bg-blue-50 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              Included with Audience Activator Pixel
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Dealer BDC AI
+            </h2>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+              <div className="bg-white px-6 py-3 rounded-lg border-2 border-blue-600 shadow-sm">
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Founding Dealers</p>
+                <p className="text-2xl font-extrabold text-blue-600">$0<span className="text-base font-medium text-slate-600">/month</span></p>
+                <p className="text-xs text-slate-500 mt-1">(first 100 dealers)</p>
+              </div>
+              <div className="bg-white px-6 py-3 rounded-lg border border-slate-200 shadow-sm">
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Standard Pricing</p>
+                <p className="text-2xl font-extrabold text-slate-900">$499<span className="text-base font-medium text-slate-600">/month</span></p>
+                <p className="text-xs text-slate-500 mt-1">per rooftop</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Value Proposition */}
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 md:p-12 mb-12">
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl font-bold text-slate-900 mb-4 leading-relaxed">
+                The Pixel doesn't just track intent.<br />
+                <span className="text-blue-600">Dealer BDC AI acts on it.</span>
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Dealer BDC AI is included with the Audience Activator–powered Pixel, transforming real-time shopper behavior into outbound calls, live transfers, and automatic follow-up — without adding BDC workload or headcount.
+              </p>
+              <p className="text-slate-600 leading-relaxed mt-4">
+                Once installed, the Pixel identifies high-intent shoppers and Dealer BDC AI handles the outreach automatically.
+              </p>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center justify-center my-12">
+            <div className="h-px bg-slate-200 flex-grow max-w-xs"></div>
+          </div>
+
+          {/* What's Included */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center mb-10">What Dealer BDC AI Includes</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              {/* Feature 1 */}
+              <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Intent-Triggered AI Calling</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      When the Audience Activator Pixel detects high-intent behavior, Dealer BDC AI initiates an outbound call in real time.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Sparkles className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Vehicle-Aware Conversations</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-3">Dealer BDC AI knows:</p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span>The exact vehicle a shopper viewed</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span>Shopping frequency and urgency</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span>Where they are in the buying journey</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature 3 */}
+              <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <ArrowRight className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Live Transfers to Your Team</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Only engaged shoppers are transferred live — no cold calls, no wasted dials.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature 4 */}
+              <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Automated Post-Call Follow-Up</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-3">Every interaction produces:</p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span>A full call transcript</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span>A personalized follow-up email</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span>Instant dealer notifications</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature 5 */}
+              <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Zap className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">No Additional Tools or Integrations</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Dealer BDC AI runs directly off the Audience Activator Pixel.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature 6 */}
+              <div className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Rocket className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Built for Multi-Rooftop Dealers</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Centralized control across multiple locations, brands, and territories.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center justify-center my-12">
+            <div className="h-px bg-slate-200 flex-grow max-w-xs"></div>
+          </div>
+
+          {/* Simple Pricing Section */}
+          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-xl p-8 md:p-12 text-white text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Simple Pricing. Built-In Value.</h3>
+            <p className="text-blue-100 leading-relaxed mb-6 max-w-3xl mx-auto">
+              Dealer BDC AI is included at no additional cost with the Audience Activator Pixel for the first 100 dealers.
+              After founding access is filled, Pixel + Dealer BDC AI is $499/month per rooftop.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-left">
+              <div className="flex items-start gap-3">
+                <Check className="w-6 h-6 text-blue-300 flex-shrink-0 mt-0.5" />
+                <span className="text-blue-50 font-medium">No per-call fees</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check className="w-6 h-6 text-blue-300 flex-shrink-0 mt-0.5" />
+                <span className="text-blue-50 font-medium">No usage limits</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Check className="w-6 h-6 text-blue-300 flex-shrink-0 mt-0.5" />
+                <span className="text-blue-50 font-medium">No revenue share</span>
               </div>
             </div>
           </div>
